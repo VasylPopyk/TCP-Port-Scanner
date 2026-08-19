@@ -1,4 +1,4 @@
-import program  # Directly imports program.py from the same directory
+import program  
 
 
 def main():
@@ -6,7 +6,6 @@ def main():
     print("       INTERACTIVE PORT SCANNER LAUNCHER       ")
     print("=" * 50 + "\n")
 
-    # Prompt for inputs and convert them directly to proper types
     target_ip = (
         input("Enter target IP address [default: 127.0.0.1]: ").strip()
         or "127.0.0.1"
@@ -26,7 +25,6 @@ def main():
 
     print("\n[*] Passing arguments directly to program.py...\n")
 
-    # Directly execute the run_scanner function from program.py
     try:
         program.run_scanner(
             host=target_ip,

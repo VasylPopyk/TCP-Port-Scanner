@@ -40,7 +40,6 @@ def run_scanner(
             executor.submit(scan_port, host, port, timeout): port for port in ports
         }
 
-        # Process results as soon as each port finish scanning (real-time output)
         for future in as_completed(futures):
             port, is_open, banner = future.result()
             if is_open:
@@ -59,7 +58,6 @@ def main() -> None:
         epilog="Example: python scanner.py 127.0.0.1 --start-port 1 --end-port 1024",
     )
 
-    # Optional fallback for IP enables running directly via VS Code Run button
     parser.add_argument(
         "ip",
         type=str,
